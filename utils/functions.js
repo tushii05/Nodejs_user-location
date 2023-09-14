@@ -31,7 +31,8 @@ const logHistory = (logType, userDetail, req, res) => {
   const ipAddress = getIp(req);
   console.log(`IP ADDRESS ${ipAddress}`);
   axios
-    .get(`https://ipapi.co/${ipAddress}/json/`)
+    // .get(`https://ipapi.co/${ipAddress}/json/`)
+    .get(`http://ip-api.com/json/${ipAddress}`)
     .then(function (response) {
       if (response.data.error) {
         res.status(500).json({ data: "Local IP", ipAddress });
